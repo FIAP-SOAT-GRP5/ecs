@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Change to dev directory
-      run: cd envronments/dev
+      run: cd environments/dev
     - name: Configure AWS Credentials
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
