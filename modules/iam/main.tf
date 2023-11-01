@@ -15,5 +15,5 @@ resource "aws_iam_policy_attachment" "attachment" {
   depends_on = [ aws_iam_role.aws_role ]
   name       = "policy_attachment_ecs"
   roles	     = [aws_iam_role.aws_role.name]
-  policy_arn = aws_iam_policy.policy.this.arn
+  policy_arn = aws_iam_policy.policy.arn
 }
