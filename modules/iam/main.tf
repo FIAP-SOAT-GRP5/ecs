@@ -6,7 +6,7 @@ resource "aws_iam_role" "aws_role" {
 }
 
 resource "aws_iam_policy_attachment" "attachment" {
-  depends_on = [ aws_iam_role.aws_role ]
-  name       = join("", aws_iam_role.aws.*.name)
-  policy_arn = join("", data.aws_iam_policy_document.this.*.arn)
+  depends_on = [ aws_iam_policy.this, aws_iam_role.aws_role ]
+  name = aws_iam_role.aws_role.name
+  policy_arn = aws_iam_policy.this.arn
 }
