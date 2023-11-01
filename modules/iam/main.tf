@@ -8,7 +8,7 @@ resource "aws_iam_role" "aws_role" {
 resource "aws_iam_policy_attachment" "attachment" {
   depends_on = [ aws_iam_role.aws_role ]
   name       = "policy_attachment_ecs"
-  roles	     = [aws_iam_role.aws.name]
+  roles	     = [aws_iam_role.aws_role]
   policy_arn = data.aws_iam_policy_document.this.arn
 }
 
