@@ -1,9 +1,3 @@
-# resource "aws_iam_policy" "policy" {
-#   name   = "policy_ecs"
-#   policy = data.aws_iam_policy_document.this.json
-
-# }
-
 resource "aws_iam_role" "aws_role" {
   name               = var.aws_iam_role
   description        = "Role de Servico do ECS."
