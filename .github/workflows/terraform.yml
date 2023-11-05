@@ -1,6 +1,9 @@
 name: Terraform Deployment
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
@@ -39,7 +42,7 @@ jobs:
 
       - name: Terraform Plan
         if: github.event_name == 'pull_request'
-        run: terraform plan -auto-approve -input=false
+        run: terraform plan -input=false
 
       - name: Terraform Plan Status
         if: steps.plan.outcome == 'failure'
