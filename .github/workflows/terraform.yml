@@ -39,7 +39,7 @@ jobs:
 
       - name: Terraform Plan
         if: github.event_name == 'pull_request'
-        run: terraform plan -input=false
+        run: terraform plan -auto-approve -input=false
 
       - name: Terraform Plan Status
         if: steps.plan.outcome == 'failure'
